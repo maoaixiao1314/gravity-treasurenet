@@ -73,7 +73,7 @@ lazy_static! {
     static ref COSMOS_NODE_GRPC: String =
         env::var("COSMOS_NODE_GRPC").unwrap_or_else(|_| "http://localhost:9090".to_owned());
     static ref COSMOS_NODE_ABCI: String =
-        env::var("COSMOS_NODE_ABCI").unwrap_or_else(|_| "http://localhost:26657".to_owned());
+        env::var("COSMOS_NODE_ABCI").unwrap_or_else(|_| "http://localhost:26658".to_owned());
     static ref ETH_NODE: String =
         env::var("ETH_NODE").unwrap_or_else(|_| "http://localhost:8546".to_owned());
 }

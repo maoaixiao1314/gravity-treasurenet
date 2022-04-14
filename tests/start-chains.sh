@@ -32,4 +32,4 @@ if [[ "$OSTYPE" == "darwin"* ]]; then
        PLATFORM_CMD="--platform=linux/amd64"; fi
 fi
 # Run new test container instance
-docker run --name gravity_test_instance $PLATFORM_CMD --mount type=bind,source="$(pwd)"/,target=/root/go/src/gravity --cap-add=NET_ADMIN -p 9092:9092 -p 9090:9090 -p 26657:26657 -p 1317:1317 -p 8546:8546 -it gravity-base /bin/bash /root/go/src/gravity/tests/container-scripts/reload-code.sh $NODES $TEST_TYPE $ALCHEMY_ID
+docker run --name gravity_test_instance $PLATFORM_CMD --mount type=bind,source="$(pwd)"/,target=/root/go/src/gravity --cap-add=NET_ADMIN -p 9092:9092 -p 9090:9090 -p 26658:26658 -p 1317:1317 -p 8546:8546 -it gravity-base /bin/bash /root/go/src/gravity/tests/container-scripts/reload-code.sh $NODES $TEST_TYPE $ALCHEMY_ID
