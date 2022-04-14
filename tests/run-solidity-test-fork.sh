@@ -14,5 +14,5 @@ if [[ -z "${ALCHEMY_ID}" ]]; then
   exit 1
 fi
 
-pushd /gravity/solidity
+pushd /root/go/src/gravity/solidity
 npm run solidity_test_fork

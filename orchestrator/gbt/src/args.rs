@@ -54,7 +54,7 @@ pub struct OrchestratorOpts {
     #[clap(long, default_value = "http://localhost:9090")]
     pub cosmos_grpc: String,
     /// (Optional) The Ethereum RPC server that will be used
-    #[clap(long, default_value = "http://localhost:8545")]
+    #[clap(long, default_value = "http://localhost:8546")]
     pub ethereum_rpc: String,
     /// The Cosmos Denom and amount to pay Cosmos chain fees
     #[clap(short, long, parse(try_from_str))]
@@ -86,7 +86,7 @@ pub struct RelayerOpts {
     #[clap(short, long, parse(try_from_str))]
     pub gravity_contract_address: Option<EthAddress>,
     /// (Optional) The Ethereum RPC server that will be used
-    #[clap(long, default_value = "http://localhost:8545")]
+    #[clap(long, default_value = "http://localhost:8546")]
     pub ethereum_rpc: String,
     /// (Optional) The Cosmos gRPC server that will be used to
     #[clap(short, long, default_value = "http://localhost:9090")]
@@ -138,7 +138,7 @@ pub struct EthToCosmosOpts {
     #[clap(long, parse(try_from_str))]
     pub ethereum_key: EthPrivateKey,
     /// (Optional) The Ethereum RPC server that will be used to submit the transaction
-    #[clap(long, default_value = "http://localhost:8545")]
+    #[clap(long, default_value = "http://localhost:8546")]
     pub ethereum_rpc: String,
     /// The address fo the Gravity contract on Ethereum
     #[clap(short, long, parse(try_from_str))]
@@ -162,7 +162,7 @@ pub struct DeployErc20RepresentationOpts {
     #[clap(long, default_value = "http://localhost:9090")]
     pub cosmos_grpc: String,
     /// (Optional) The Ethereum RPC server that will be used to submit the transaction
-    #[clap(long, default_value = "http://localhost:8545")]
+    #[clap(long, default_value = "http://localhost:8546")]
     pub ethereum_rpc: String,
     /// The Cosmos Denom you wish to create an ERC20 representation for
     #[clap(short, long)]
