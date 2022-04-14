@@ -51,7 +51,7 @@ pub struct OrchestratorOpts {
     #[clap(short, long, parse(try_from_str))]
     pub ethereum_key: Option<EthPrivateKey>,
     /// (Optional) The Cosmos gRPC server that will be used
-    #[clap(long, default_value = "http://localhost:9090")]
+    #[clap(long, default_value = "http://localhost:9093")]
     pub cosmos_grpc: String,
     /// (Optional) The Ethereum RPC server that will be used
     #[clap(long, default_value = "http://localhost:8546")]
@@ -89,7 +89,7 @@ pub struct RelayerOpts {
     #[clap(long, default_value = "http://localhost:8546")]
     pub ethereum_rpc: String,
     /// (Optional) The Cosmos gRPC server that will be used to
-    #[clap(short, long, default_value = "http://localhost:9090")]
+    #[clap(short, long, default_value = "http://localhost:9093")]
     pub cosmos_grpc: String,
 }
 
@@ -114,7 +114,7 @@ pub struct CosmosToEthOpts {
     #[clap(short, long, parse(try_from_str))]
     pub cosmos_phrase: CosmosPrivateKey,
     /// (Optional) The Cosmos gRPC server that will be used to submit the transaction
-    #[clap(long, default_value = "http://localhost:9090")]
+    #[clap(long, default_value = "http://localhost:9093")]
     pub cosmos_grpc: String,
     /// The Denom and amount you wish to send eg: 100ugraviton
     #[clap(short, long, parse(try_from_str))]
@@ -159,7 +159,7 @@ pub struct EthToCosmosOpts {
 #[derive(Parser)]
 pub struct DeployErc20RepresentationOpts {
     /// (Optional) The Cosmos gRPC server that will be used to submit the transaction
-    #[clap(long, default_value = "http://localhost:9090")]
+    #[clap(long, default_value = "http://localhost:9093")]
     pub cosmos_grpc: String,
     /// (Optional) The Ethereum RPC server that will be used to submit the transaction
     #[clap(long, default_value = "http://localhost:8546")]
@@ -205,7 +205,7 @@ pub struct RegisterOrchestratorAddressOpts {
     #[clap(short, long, parse(try_from_str))]
     pub cosmos_phrase: Option<String>,
     /// (Optional) The Cosmos gRPC server that will be used to submit the transaction
-    #[clap(long, default_value = "http://localhost:9090")]
+    #[clap(long, default_value = "http://localhost:9093")]
     pub cosmos_grpc: String,
     /// The Cosmos Denom and amount to pay Cosmos chain fees
     #[clap(short, long, parse(try_from_str))]
@@ -269,7 +269,7 @@ pub enum GovQuerySubcommand {
 /// Queries active airdrop proposals and pretty-prints the interpreted data
 pub struct AirdropQueryOpts {
     /// (Optional) The Cosmos gRPC server that will be used to perform the query
-    #[clap(short, long, default_value = "http://localhost:9090")]
+    #[clap(short, long, default_value = "http://localhost:9093")]
     pub cosmos_grpc: String,
     /// (Optional) query airdrops not actively being voted on
     #[clap(short, long)]
@@ -286,7 +286,7 @@ pub struct AirdropQueryOpts {
 #[derive(Parser)]
 pub struct IbcMetadataProposalOpts {
     /// (Optional) The Cosmos gRPC server that will be used to submit the transaction
-    #[clap(long, default_value = "http://localhost:9090")]
+    #[clap(long, default_value = "http://localhost:9093")]
     pub cosmos_grpc: String,
     /// The phrase for an address containing enough funds to submit the proposal.
     #[clap(short, long, parse(try_from_str))]
@@ -307,7 +307,7 @@ pub struct IbcMetadataProposalOpts {
 #[derive(Parser)]
 pub struct AirdropProposalOpts {
     /// (Optional) The Cosmos gRPC server that will be used to submit the transaction
-    #[clap(long, default_value = "http://localhost:9090")]
+    #[clap(long, default_value = "http://localhost:9093")]
     pub cosmos_grpc: String,
     /// The phrase for an address containing enough funds to submit the proposal.
     #[clap(short, long, parse(try_from_str))]
@@ -330,7 +330,7 @@ pub struct AirdropProposalOpts {
 #[derive(Parser)]
 pub struct EmergencyBridgeHaltProposalOpts {
     /// (Optional) The Cosmos gRPC server that will be used to submit the transaction
-    #[clap(long, default_value = "http://localhost:9090")]
+    #[clap(long, default_value = "http://localhost:9093")]
     pub cosmos_grpc: String,
     /// The phrase for an address containing enough funds to submit the proposal.
     #[clap(short, long, parse(try_from_str))]
@@ -353,7 +353,7 @@ pub struct EmergencyBridgeHaltProposalOpts {
 #[derive(Parser)]
 pub struct OracleUnhaltProposalOpts {
     /// (Optional) The Cosmos gRPC server that will be used to submit the transaction
-    #[clap(long, default_value = "http://localhost:9090")]
+    #[clap(long, default_value = "http://localhost:9093")]
     pub cosmos_grpc: String,
     /// The phrase for an address containing enough funds to submit the proposal.
     #[clap(short, long, parse(try_from_str))]

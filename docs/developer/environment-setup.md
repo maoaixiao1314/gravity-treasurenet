@@ -184,7 +184,7 @@ switch to a new terminal and run one of these two commands. A list of all predef
 
 # This provides shell access to the running testnet
 
-# RPC endpoints are passed through the container to localhost:8546 (ethereum) and localhost:9090 (Cosmos GRPC)
+# RPC endpoints are passed through the container to localhost:8546 (ethereum) and localhost:9093 (Cosmos GRPC)
 
 docker exec -it gravity_test_instance /bin/bash
 

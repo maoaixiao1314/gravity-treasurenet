@@ -33,5 +33,5 @@ if [[ "$OSTYPE" == "darwin"* ]]; then
 fi
 
 # Run new test container instance
-PORTS="-p 9090:9090 -p 26658:26658 -p 1317:1317 -p 8546:8546"
+PORTS="-p 9093:9093 -p 26658:26658 -p 1317:1317 -p 8546:8546"
 docker run --name gravity_all_up_test_instance $PLATFORM_CMD --cap-add=NET_ADMIN $PORTS gravity-base /bin/bash /root/go/src/gravity/tests/container-scripts/upgrade-test-internal.sh $NODES $OLD_VERSION

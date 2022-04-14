@@ -179,7 +179,7 @@ mod tests {
     #[actix_rt::test]
     #[ignore]
     async fn test_endpoints() {
-        let mut grpc = GravityQueryClient::connect("https://gravitychain.io:9090")
+        let mut grpc = GravityQueryClient::connect("https://gravitychain.io:9093")
             .await
             .unwrap();
         let attestations = grpc
