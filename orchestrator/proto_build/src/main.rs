@@ -61,7 +61,7 @@ fn compile_protos(out_dir: &Path, tmp_dir: &Path) {
     let root: PathBuf = root.parse().unwrap();
     // this gives us the repo root by going up two levels from the module root
     let root = root.parent().unwrap().parent().unwrap().to_path_buf();
-
+    println!("{:?} path",root);
     let mut gravity_proto_dir = root.clone();
     gravity_proto_dir.push("module/proto/gravity/v1");
     let mut gravity_proto_include_dir = root.clone();

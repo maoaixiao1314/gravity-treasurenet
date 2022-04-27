@@ -26,8 +26,8 @@ do
     if [[ "$i" -eq 1 ]]; then
         # node one gets localhost so we can easily shunt these ports
         # to the docker host
-        RPC_ADDRESS="--rpc.laddr tcp://0.0.0.0:26658"
-        GRPC_ADDRESS="--grpc.address 0.0.0.0:9093"
+        RPC_ADDRESS="--rpc.laddr tcp://0.0.0.0:26657"
+        GRPC_ADDRESS="--grpc.address 0.0.0.0:9090"
         GRPC_WEB_ADDRESS="--grpc-web.address 0.0.0.0:9092"
         sed -i 's/enable-unsafe-cors = false/enable-unsafe-cors = true/g' /validator$i/config/app.toml
         sed -i 's/enabled-unsafe-cors = false/enabled-unsafe-cors = true/g' /validator$i/config/app.toml

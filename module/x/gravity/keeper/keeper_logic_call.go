@@ -18,13 +18,13 @@ import (
 func (k Keeper) GetOutgoingLogicCall(ctx sdk.Context, invalidationID []byte, invalidationNonce uint64) *types.OutgoingLogicCall {
 	store := ctx.KVStore(k.storeKey)
 	call := types.OutgoingLogicCall{
-		Transfers:            []types.ERC20Token{},
-		Fees:                 []types.ERC20Token{},
-		LogicContractAddress: "",
-		Payload:              []byte{},
+		Transfers:            []types.ERC20Token{}, //这些是在执行之前发送到逻辑合约的代币。然后合约可以使用代币采取行动。例如，Gravity 可以向逻辑合约发送一些 Uniswap LP 代币，然后它将用于从 Uniswap 赎回流动性。
+		Fees:                 []types.ERC20Token{}, //这些代币将由核心 Gravity.sol 合约支付给 Gravity 中继器以执行逻辑调用。费用在逻辑合约执行后支付，因此可以将逻辑合约执行后收到的代币支付给中继者，然后发送回核心 Gravity 合约
+		LogicContractAddress: "",                   //这是核心 Gravity 合约调用以执行任意逻辑的逻辑合约的地址。注意：这可能是实际的逻辑合约，也可能是多次调用逻辑合约的批处理合约。/solidity/test文件夹中的示例。
+		Payload:              []byte{},             //这是将在逻辑合约上执行的以太坊 abi 编码函数调用。如果您使用的是批处理中间件合约，则此 abi 编码函数调用本身将包含实际逻辑合约上的 abi 编码函数调用数组
 		Timeout:              0,
 		InvalidationId:       invalidationID,
-		InvalidationNonce:    invalidationNonce,
+		InvalidationNonce:    invalidationNonce, //invalidation_id并invalidation_nonce在 Gravity 任意逻辑调用功能中用作重放保护
 		Block:                0,
 	}
 	k.cdc.MustUnmarshal(store.Get(types.GetOutgoingLogicCallKey(invalidationID, invalidationNonce)), &call)

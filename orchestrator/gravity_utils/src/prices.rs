@@ -5,7 +5,7 @@ use web30::amm::WETH_CONTRACT_ADDRESS;
 use web30::client::Web3;
 use web30::jsonrpc::error::Web3Error;
 
-/// utility function, gets the price of a given ERC20 token in uniswap in WETH given the erc20 address and amount
+/// utility function, gets the price of a given ERC20 token in uniswap in WETH given the erc20 address and amount实用功能，获取给定ERC20地址和金额的uniswap中给定ERC20令牌的价格
 pub async fn get_weth_price(
     token: EthAddress,
     amount: Uint256,
