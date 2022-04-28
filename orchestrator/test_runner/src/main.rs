@@ -171,15 +171,15 @@ pub async fn main() {
     }
 
     let contracts = parse_contract_addresses();
-    // the address of the deployed Gravity contract
+    // the address of the deployed Gravity contract 合同地址
     let gravity_address = contracts.gravity_contract;
-    // the address of the deployed GravityERC721 contract
+    // the address of the deployed GravityERC721 contract 合同地址
     let gravity_erc721_address = contracts.gravity_erc721_contract;
-    // addresses of deployed ERC20 token contracts to be used for testing
+    // addresses of deployed ERC20 token contracts to be used for testing 用于测试的已部署ERC20令牌合约的地址
     let erc20_addresses = contracts.erc20_addresses.clone();
-    // addresses of deployed ERC721 token contracts to be used for testing
+    // addresses of deployed ERC721 token contracts to be used for testing 用于测试的已部署ERC721令牌合同的地址
     let erc721_addresses = contracts.erc721_addresses.clone();
-    // before we start the orchestrators send them some funds so they can pay
+    // before we start the orchestrators send them some funds so they can pay 在我们开始之前，orchestrators会给他们寄一些钱，这样他们就可以付钱了
     // for things
     send_eth_to_orchestrators(&keys, &web30).await;
 

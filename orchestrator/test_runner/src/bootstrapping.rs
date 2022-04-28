@@ -111,10 +111,10 @@ pub async fn deploy_contracts(contact: &Contact) {
     ];
     // the default unmoved locations for the Gravity repo
     const C: [&str; 4] = [
-        "/gravity/solidity/contract-deployer.ts",
-        "/gravity/solidity/artifacts/contracts/Gravity.sol/Gravity.json",
-        "/gravity/solidity/artifacts/contracts/GravityERC721.sol/GravityERC721.json",
-        "/gravity/solidity/",
+        "/root/go/src/gravity/solidity/contract-deployer.ts",
+        "/root/go/src/gravity/solidity/artifacts/contracts/Gravity.sol/Gravity.json",
+        "/root/go/src/gravity/solidity/artifacts/contracts/GravityERC721.sol/GravityERC721.json",
+        "/root/go/src/gravity/solidity/",
     ];
     let output = if all_paths_exist(&A) || all_paths_exist(&B) {
         let paths = return_existing(A, B);
