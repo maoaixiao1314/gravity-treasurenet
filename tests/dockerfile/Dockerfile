@@ -10,6 +10,6 @@ RUN cd /geth && tar -xvf * && mv /geth/**/geth /usr/bin/geth
 # this is a bit of a pain but it does speed things up a lot
 ADD gravity.tar.gz /
 # build the test runner specifically to cache a release artifact
-# RUN pushd /root/go/src/gravity/orchestrator/test_runner && PATH=$PATH:$HOME/.cargo/bin cargo build --bin test-runner --release
-# RUN pushd /root/go/src/gravity/module/ && PATH=$PATH:/usr/local/go/bin GOPROXY=https://proxy.golang.org make && PATH=$PATH:/usr/local/go/bin make install
-# RUN pushd /root/go/src/gravity/solidity/ && HUSKY_SKIP_INSTALL=1 npm install && npm run typechain
+RUN pushd /root/go/src/gravity/orchestrator/test_runner && PATH=$PATH:$HOME/.cargo/bin cargo build --bin test-runner --release
+RUN pushd /root/go/src/gravity/module/ && PATH=$PATH:/usr/local/go/bin GOPROXY=https://proxy.golang.org make && PATH=$PATH:/usr/local/go/bin make install
+RUN pushd /root/go/src/gravity/solidity/ && HUSKY_SKIP_INSTALL=1 npm install && npm run typechain
